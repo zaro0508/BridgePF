@@ -37,7 +37,7 @@ before_script:
 - bash  $TRAVIS_BUILD_DIR/dist/create_bridge_config.sh
 - cat $HOME/.bridge/bridge-server.conf
 script:
-- sbt clean dist
+- sbt clean test dist
 branches:
   only:
   - develop
