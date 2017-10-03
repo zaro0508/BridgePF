@@ -22,7 +22,7 @@ common: &default_settings
   # app_name: My Application;My Application 2
   # This setting is required. Up to 3 different application names can be specified.
   # The first application name must be unique.
-  app_name: BridgePF
+  # app_name: My Application
 
   # Set to true to enable support for auto app naming.
   # The name of each web app is detected automatically
