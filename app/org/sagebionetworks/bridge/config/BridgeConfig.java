@@ -8,8 +8,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class BridgeConfig implements Config {
+    private static final Logger logger = LoggerFactory.getLogger(BridgeConfig.class);
+
 
     private static final String CONFIG_FILE = "bridge-server.conf";
     private static final String TEMPLATE_CONFIG = CONFIG_FILE;
@@ -111,6 +115,14 @@ public class BridgeConfig implements Config {
     }
 
     public String getConsentsBucket() {
+        logger.info("getting key=" + "consents.bucket" + " got value=" + config.get("consents.bucket"));
+        logger.info("getting key=" + "consents.bucket".toUpperCase() + " got value=" + config.get("consents.bucket".toUpperCase()));
+        logger.info("getting key=" + "dev.consents.bucket" + " got value=" + config.get("dev.consents.bucket"));
+        logger.info("getting key=" + "dev.consents.bucket".toUpperCase() + " got value=" + config.get("dev.consents.bucket".toUpperCase()));
+        logger.info("getting key=" + "CONSENTS_BUCKET" + " got value=" + config.get("CONSENTS_BUCKET"));
+        logger.info("getting key=" + "CONSENTS_BUCKET".toLowerCase() + " got value=" + config.get("CONSENTS_BUCKET".toLowerCase()));
+        logger.info("getting key=" + "DEV_CONSENTS_BUCKET".toLowerCase() + " got value=" + config.get("DEV_CONSENTS_BUCKET".toLowerCase()));
+        logger.info("getting key=" + "DEV_CONSENTS_BUCKET" + " got value=" + config.get("DEV_CONSENTS_BUCKET"));
         return config.get(CONSENTS_BUCKET);
     }
 
